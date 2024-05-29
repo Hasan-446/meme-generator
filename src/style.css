@@ -21,7 +21,7 @@ body {
 .header-title {
   margin-right: auto;
   margin-left: 5px;
-  font-size: 20px;
+  font-size: 25px;
   letter-spacing: 1px;
 }
 .header-img {
@@ -45,6 +45,18 @@ body {
   color: whitesmoke;
   font-size: 14px;
 }
+
+.download-button{
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  border-radius: 5px;
+  border: 0px;
+  color: whitesmoke;
+  font-size: 18px;
+  padding: 10px 20px;
+margin-top: 20px;
+align-items: center;
+     cursor: pointer;
+}
 .form-input{
     border-radius: 5px;
     border: 1px solid #D5D4D8;
@@ -58,7 +70,7 @@ display: flex;
 justify-content: center;
 }
 .meme-image{
- max-width: 70%;
+ max-width: 100%;
 }
 
 .meme-text {
@@ -92,4 +104,9 @@ justify-content: center;
 
 .top {
   top: 0;
+}
+
+.Footer{
+  text-align: center;
+margin-top: 20px;
 }

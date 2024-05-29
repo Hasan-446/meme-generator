@@ -1,5 +1,5 @@
 import React from "react";
-
+import html2canvas from "html2canvas";
 
 export default function Meme() {
   //const [memeImage, setMemeImage] = React.useState();
@@ -31,6 +31,17 @@ export default function Meme() {
     console.log(meme);
   }
 
+  const downloadMeme = () => {
+    const memeElement = document.querySelector(".meme"); // Select the meme element
+
+    html2canvas(memeElement, { useCORS: true }).then((canvas) => {
+      const link = document.createElement("a");
+      link.download = "meme.png";
+      link.href = canvas.toDataURL();
+      link.click();
+    });
+  };
+
   function handleChange(event){
     const{name,value}=event.target
     setMeme(prevMeme=> ({
@@ -51,7 +62,6 @@ export default function Meme() {
           name="topText"
           value={meme.topText}
           onChange={handleChange}
-
         />
         <input
           type="text"
@@ -68,10 +78,26 @@ export default function Meme() {
 
       <div className="meme">
         <div className="meme-image-container">
-          <img src={meme.randomImage} alt="" className="meme-image" />
+          <img
+            src={meme.randomImage}
+            alt=""
+            className="meme-image"
+            crossOrigin="anonymous"
+          />
         </div>
         <h2 className="meme-text top">{meme.topText}</h2>
         <h2 className="meme-text bottom">{meme.bottomText} </h2>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <button className="download-button" onClick={downloadMeme}>
+          Download Image
+        </button>
       </div>
     </main>
   );

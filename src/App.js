@@ -2,6 +2,7 @@
 import React from "react";
 import Header from "./components/Header";
 import Meme from "./components/Meme";
+import Footer from "./components/Footer";
 
 
 function App(){
@@ -10,6 +11,7 @@ function App(){
      <link href="https://fonts.googleapis.com/css2?family=Karla" rel="stylesheet"></link>
      <Header/>
      <Meme/>
+     <Footer/>
    </div>
   )
 }
